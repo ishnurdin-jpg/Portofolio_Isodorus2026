@@ -457,6 +457,8 @@ section h2{
     flex-direction: column;
 
     gap: 40px;
+
+    width:100%;
 }
 
 .card{
@@ -1374,16 +1376,35 @@ nav ul{
     margin-bottom: 15px;
 }
 
+@media(max-width:768px){
+
+    .skills-header h2{
+        font-size: 42px;
+        line-height: 1.2;
+    }
+
+}
+
 .skills-header p{
     color: #bdbdbd;
     font-size: 18px;
     line-height: 1.8;
 }
 
+@media(max-width:768px){
+
+    .skills-header p{
+        font-size: 15px;
+        line-height: 1.7;
+        text-align:center;
+    }
+
+}
+
 .tools-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-    gap: 25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
 
 .tool-box{
@@ -1404,8 +1425,8 @@ nav ul{
 }
 
 .tool-box img{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     background: white;
     padding: 10px;
@@ -1457,14 +1478,17 @@ nav ul{
     }
 
     .nav-links{
-        position: static;
-        transform: none;
+    position: static;
+    transform: none;
 
-        flex-wrap: wrap;
-        justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
 
-        gap: 20px;
-    }
+    gap: 14px;}
+
+    .nav-links li a{
+    font-size: 14px;
+}
 
     .nav-links li a{
         font-size: 16px;
@@ -1477,26 +1501,28 @@ nav ul{
 
     /* HERO */
     .hero{
-        padding: 140px 5% 80px;
-    }
+    padding: 180px 7% 80px;
+}
 
     .hero-content{
-        width: 100%;
-    }
-
+    width: 100%;
+    max-width: 100%;
+}
     .hero h1{
-        font-size: 52px;
-        line-height: 1.1;
-    }
+    font-size: 42px;
+    line-height: 1.1;
+    word-break: break-word;
+}
 
     .hero h2{
         font-size: 22px;
     }
 
     .hero p{
-        font-size: 16px;
-        line-height: 1.7;
-    }
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 100%;
+}
 
     /* BADGE */
     .hero-badge{
@@ -1514,13 +1540,13 @@ nav ul{
         width: 100%;
     }
 
-    .primary-btn,
-    .secondary-btn{
-        width: 100%;
-        justify-content: center;
-        font-size: 16px;
-        padding: 16px;
-    }
+.primary-btn,
+.secondary-btn{
+    width: 100%;
+    justify-content: center;
+    font-size: 15px;
+    padding: 14px 18px;
+}
 
     /* STATS */
     .hero-stats{
@@ -1597,20 +1623,22 @@ nav ul{
 ========================================= */
 
 .typing-text{
-
-    width: fit-content;
-
+    width: 100%;
+    max-width: 100%;
     margin: auto;
 
     overflow: hidden;
 
-    white-space: nowrap;
+    white-space: normal;
+
+    word-break: break-word;
 
     border-right: 3px solid cyan;
 
     animation:
-    typing 10s steps(30,end) infinite,
     blink 0.8s infinite;
+
+    text-align: center;
 }
 
 /* TYPING EFFECT */
@@ -2136,7 +2164,8 @@ MODERN PROJECT CARD
     background:rgba(10,15,35,0.85);
     border:1px solid rgba(0,180,255,0.1);
     border-radius:30px;
-    padding:40px;
+    padding:30px;
+    width:100%;
     transition:0.4s;
     backdrop-filter:blur(10px);
 }
@@ -2205,4 +2234,220 @@ MODERN PROJECT CARD
 .web-project{
     background:#0ea5e9;
     color:white;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    overflow-x: hidden;
+}
+@media(max-width:768px){
+
+    .card{
+        padding:24px;
+        border-radius:22px;
+    }
+
+    .gallery-info p{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+        word-break:normal;
+    }
+
+    .gallery-info h4{
+        font-size:20px;
+        line-height:1.4;
+    }
+
+    .project-subtitle{
+        font-size:18px;
+        line-height:1.5;
+    }
+    section{
+        padding:80px 6%;
+    }
+
+}
+
+/* =========================================
+   MOBILE FIX FINAL
+========================================= */
+
+@media(max-width:768px){
+
+    /* BODY */
+    body{
+        overflow-x:hidden;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    /* HERO */
+    .hero{
+        padding:180px 7% 80px;
+    }
+
+    .hero-content{
+        width:100%;
+        max-width:100%;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.1;
+        word-break:break-word;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:15px;
+        line-height:1.8;
+        max-width:100%;
+    }
+
+    /* TYPING */
+    .typing-text{
+        width:100%;
+        max-width:100%;
+        white-space:normal;
+        word-break:break-word;
+        overflow:hidden;
+        text-align:center;
+        animation:blink 0.8s infinite;
+    }
+
+    /* NAVBAR */
+    nav{
+        padding:20px 5%;
+        gap:18px;
+    }
+
+    .nav-links{
+        position:static;
+        transform:none;
+        gap:14px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links li a{
+        font-size:14px;
+    }
+
+    /* BUTTON */
+    .hero-buttons{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+        font-size:15px;
+        padding:14px 18px;
+        justify-content:center;
+    }
+
+    /* STATS */
+    .hero-stats{
+        gap:30px;
+    }
+
+    .stat-box h3{
+        font-size:36px;
+    }
+
+    .stat-box span{
+        font-size:14px;
+    }
+
+    /* PROJECT CARD */
+    .card{
+        width:100%;
+        padding:24px;
+        border-radius:22px;
+    }
+
+    .gallery-info p{
+        text-align:left;
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    .gallery-info h4{
+        font-size:20px;
+        line-height:1.4;
+    }
+
+    .project-subtitle{
+        font-size:18px;
+        line-height:1.5;
+    }
+
+    /* SKILLS */
+    #skills{
+        padding:100px 6%;
+    }
+
+    .skills-header h2{
+        font-size:42px;
+        line-height:1.2;
+    }
+
+    .skills-header p{
+        font-size:15px;
+        line-height:1.7;
+        text-align:center;
+    }
+
+    .tools-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .tool-box{
+        padding:20px;
+        gap:16px;
+        border-radius:18px;
+        text-align:left;
+    }
+
+    .tool-box img{
+        width:60px;
+        height:60px;
+    }
+
+    .tool-info h3{
+        font-size:22px;
+        line-height:1.3;
+    }
+
+    .tool-info span{
+        font-size:15px;
+    }
+
+    /* CONTACT */
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* GLOBAL IMAGE FIX */
+
+img{
+    max-width:100%;
+    height:auto;
 }
