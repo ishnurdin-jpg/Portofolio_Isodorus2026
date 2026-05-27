@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Digital Portfolio</title>
+    <meta name="description"
+content="Portfolio resmi Isodorus Jebaru Nurdin, IoT & Embedded Systems Engineer yang berfokus pada automation, embedded systems, dan intelligent control berbasis ESP32 dan Arduino.">
+
+    <title>Isodorus Jebaru Nurdin | IoT & Embedded Engineer</title>
 
     <!-- HUBUNGKAN CSS -->
     <link rel="stylesheet" href="style.css">
@@ -18,38 +21,28 @@
 <body>
 
 <!-- NAVBAR -->
-<nav>
+<nav class="navbar">
 
-    <!-- LOGO -->
     <div class="logo">
-
-        <i class="fa-solid fa-microchip"></i>
-
+        <i class="fas fa-microchip"></i>
         <span>Isodorus.</span>
-
     </div>
 
-    <!-- MENU -->
-    <ul class="nav-links">
-
+    <ul class="nav-links" id="navLinks">
         <li><a href="#about">Tentang</a></li>
-
         <li><a href="#projects">Proyek</a></li>
-
         <li><a href="#skills">Keterampilan</a></li>
-
         <li><a href="#experience">Pengalaman</a></li>
-
         <li><a href="#contact">Kontak</a></li>
-
     </ul>
 
-    <!-- BUTTON -->
     <a href="#contact" class="hire-btn">
-
         Pekerjakan Saya
-
     </a>
+
+    <button class="hamburger" id="hamburger">
+    ☰
+</button>
 
 </nav>
    <!-- HERO SECTION -->
@@ -162,7 +155,7 @@
     <!-- HEADER -->
     <div class="about-header">
 
-        <h2>Isodorus jebaru Nurdin</h2>
+        <h2>Isodorus Jebaru Nurdin</h2>
 
         <p>
             Saya adalah seorang IoT & Embedded Systems Engineer
@@ -267,7 +260,7 @@
                 <p>
                      Mengembangkan sistem otomasi dan kontrol menggunakan sensor, aktuator, 
                      serta pengendalian motor untuk meningkatkan efisiensi, akurasi, dan 
-                     performa sistem secara real-timei.
+                     performa sistem secara real-time.
                 </p>
 
             </div>
@@ -1177,10 +1170,9 @@
         Personal Portfolio for IoT & Embedded Engineer
     </h4>
 
-    <img src="assets/projects/portofolio/portofolio.jpeg" alt="Digital Portfolio"
-         alt="Digital Portfolio"
-         class="project-preview">
-
+    <img src="assets/projects/portofolio/portofolio.jpeg"
+     alt="Digital Portfolio"
+     class="project-preview">
     <p>
         Website portofolio pribadi yang dirancang dan dikembangkan
         untuk menampilkan profil profesional, pengalaman,
@@ -1219,32 +1211,23 @@
 
     <div class="project-links">
 
-        <a href="https://portofolio_isodorus2026-jjer.vercel.app/"
-           target="_blank"
-           class="website-btn">
+    <a href="https://portofolio_isodorus2026-jjer.vercel.app/"
+       class="website-btn"
+       target="_blank">
+       <i class="fa-solid fa-globe"></i>
+       Lihat Website
+    </a>
 
-            <i class="fa-solid fa-globe"></i>
-            Lihat Website
-
-        </a>
-
-        <a href="https://github.com/ishnurdin-jpg"
-           target="_blank"
-           class="github-btn">
-
-            <i class="fa-brands fa-github"></i>
-            GitHub
-
-        </a>
-
-    </div>
+    <a href="https://github.com/ishnurdin-jpg"
+       class="github-btn"
+       target="_blank">
+       <i class="fa-brands fa-github"></i>
+       Github
+    </a>
 
 </div>
 
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
+</div>
 
 </section>
 
@@ -1434,7 +1417,12 @@
     <!-- Redirect setelah kirim -->
     <input type="hidden"
            name="_next"
-           value="https://Portofolio_Isodorus2026.vercel.app">
+           value="https://portofolio_isodorus2026-jjer.vercel.app/">
+
+    <!-- Format Email -->
+    <input type="hidden"
+           name="_template"
+           value="table">
 
     <div class="form-row">
 
@@ -1460,37 +1448,37 @@
 
         </div>
 
+        <div class="input-group">
+
+            <label>Subjek *</label>
+
+            <input type="text"
+                   name="Subjek"
+                   placeholder="Kolaborasi proyek"
+                   required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Pesan *</label>
+
+            <textarea
+                name="Pesan"
+                placeholder="Ceritakan tentang proyek Anda..."
+                required></textarea>
+
+        </div>
+
+        <button type="submit" class="send-btn">
+
+            <i class="fa-regular fa-paper-plane"></i>
+
+            Kirim Pesan
+
+        </button>
+
     </div>
-
-    <div class="input-group">
-
-        <label>Subjek *</label>
-
-        <input type="text"
-               name="Subjek"
-               placeholder="Kolaborasi proyek"
-               required>
-
-    </div>
-
-    <div class="input-group">
-
-        <label>Pesan *</label>
-
-        <textarea
-                  name="Pesan"
-                  placeholder="Ceritakan tentang proyek Anda..."
-                  required></textarea>
-
-    </div>
-
-    <button type="submit" class="send-btn">
-
-        <i class="fa-regular fa-paper-plane"></i>
-
-        Kirim Pesan
-
-    </button>
 
 </form>
 
@@ -1512,7 +1500,17 @@
     <!-- HUBUNGKAN JS -->
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
 
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
+</script>
 </body>
 
 </html>
